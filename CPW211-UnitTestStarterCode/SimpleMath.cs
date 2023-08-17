@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -22,7 +23,7 @@ namespace CPW211_UnitTestStarterCode
         /// <exception cref="NotImplementedException"></exception>
         public static double Add(double a, double b)
         {
-            throw new NotImplementedException();
+            return a + b;
         }
 
         /// <summary>
@@ -34,7 +35,7 @@ namespace CPW211_UnitTestStarterCode
         /// <exception cref="NotImplementedException"></exception>
         public static double Subtract(double a, double b)
         {
-            throw new NotImplementedException();
+            return a - b;
         }
 
         /// <summary>
@@ -46,7 +47,7 @@ namespace CPW211_UnitTestStarterCode
         /// <exception cref="NotImplementedException"></exception>
         public static double Multiply(double a, double b)
         {
-            throw new NotImplementedException();
+            return a * b;
         }
 
         /// <summary>
@@ -58,7 +59,12 @@ namespace CPW211_UnitTestStarterCode
         /// <exception cref="NotImplementedException"></exception>
         public static double Divide(double a, double b)
         {
-            throw new NotImplementedException();
+            if (a == 0 || b == 0)
+            {
+                throw new ArgumentException("Denominator cannot be zero");
+            }
+
+            return a / b;
         }
     }
 }
